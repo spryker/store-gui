@@ -19,29 +19,21 @@
 
         {% block widget_content %}
             <div class="row">
-                <div class="col-xs-12 col-md-6 col-lg-3">
+                <div class="col-md-6 col-lg-3">
                     <dl>
                         <dt>{{ 'Store ID' | trans }}</dt>
                         <dd>{{ store.idStore }}</dd>
                     </dl>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <dl>
-                        <dt>{{ 'Name' | trans }}</dt>
-                        <dd>{{ store.name }}</dd>
-                    </dl>
-                </div>
-            </div>
+            <dl>
+                <dt>{{ 'Name' | trans }}</dt>
+                <dd>{{ store.name }}</dd>
+            </dl>
 
             {% for templatePath, data in additional_blocks %}
                 <hr />
-                <div class="row">
-                    <div class="col-xs-12">
-                        {{ include(templatePath, data) }}
-                    </div>
-                </div>
+                {{ include(templatePath, data) }}
             {% endfor %}
 
         {% endblock %}
