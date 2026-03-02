@@ -15,9 +15,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  */
 class ListController extends AbstractController
 {
-    /**
-     * @return array
-     */
     public function indexAction(): array
     {
         $storeTable = $this->getFactory()->createStoreTable();
@@ -28,9 +25,6 @@ class ListController extends AbstractController
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function tableAction(): JsonResponse
     {
         $storeTable = $this->getFactory()->createStoreTable();

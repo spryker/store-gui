@@ -66,9 +66,6 @@ class StoreTableTest extends Unit
      */
     protected $communicationFactory;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -109,9 +106,6 @@ class StoreTableTest extends Unit
         $this->assertContains($store2->getIdStore(), $storeIds);
     }
 
-    /**
-     * @return array
-     */
     public function fetchDataShouldReturnStoresDataProvider(): array
     {
         return [
@@ -120,11 +114,6 @@ class StoreTableTest extends Unit
         ];
     }
 
-    /**
-     * @param bool $isDynamicMultiStoreEnabled
-     *
-     * @return \Spryker\Zed\StoreGui\Communication\Table\StoreTable
-     */
     protected function getStoreTable(bool $isDynamicMultiStoreEnabled): StoreTable
     {
         $storeQuery = new SpyStoreQuery();
@@ -149,18 +138,12 @@ class StoreTableTest extends Unit
         return $storeFacade;
     }
 
-    /**
-     * @return void
-     */
     protected function registerTwigServiceMock(): void
     {
         $this->tester->getContainer()
             ->set(static::SERVICE_TWIG, $this->getTwigMock());
     }
 
-    /**
-     * @return void
-     */
     protected function registerFormFactoryServiceMock(): void
     {
         $this->tester->getContainer()
@@ -185,9 +168,6 @@ class StoreTableTest extends Unit
         return $twigMock;
     }
 
-    /**
-     * @return \Twig\Loader\LoaderInterface
-     */
     protected function getChainLoader(): LoaderInterface
     {
         return new ChainLoader();

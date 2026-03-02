@@ -25,9 +25,6 @@ class StoreGuiToStoreFacadeBridge implements StoreGuiToStoreFacadeInterface
         $this->storeFacade = $storeFacade;
     }
 
-    /**
-     * @return bool
-     */
     public function isMultiStorePerZedEnabled(): bool
     {
         return $this->storeFacade->isMultiStorePerZedEnabled();
@@ -41,39 +38,21 @@ class StoreGuiToStoreFacadeBridge implements StoreGuiToStoreFacadeInterface
         return $this->storeFacade->getAllStores();
     }
 
-    /**
-     * @param int $idStore
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     public function getStoreById(int $idStore): StoreTransfer
     {
         return $this->storeFacade->getStoreById($idStore);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return \Generated\Shared\Transfer\StoreResponseTransfer
-     */
     public function createStore(StoreTransfer $storeTransfer): StoreResponseTransfer
     {
         return $this->storeFacade->createStore($storeTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return \Generated\Shared\Transfer\StoreResponseTransfer
-     */
     public function updateStore(StoreTransfer $storeTransfer): StoreResponseTransfer
     {
         return $this->storeFacade->updateStore($storeTransfer);
     }
 
-    /**
-     * @return bool
-     */
     public function isDynamicStoreEnabled(): bool
     {
         return $this->storeFacade->isDynamicStoreEnabled();

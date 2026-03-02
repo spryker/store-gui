@@ -32,10 +32,6 @@ class StoreListDataExpander implements StoreListDataExpanderInterface
      */
     protected $request;
 
-    /**
-     * @param \Spryker\Zed\StoreGui\Dependency\Facade\StoreGuiToStoreFacadeInterface $storeFacade
-     * @param \Symfony\Component\HttpFoundation\Request|null $request
-     */
     public function __construct(
         StoreGuiToStoreFacadeInterface $storeFacade,
         ?Request $request

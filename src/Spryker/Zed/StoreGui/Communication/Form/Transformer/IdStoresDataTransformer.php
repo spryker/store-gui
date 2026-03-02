@@ -20,9 +20,6 @@ class IdStoresDataTransformer implements DataTransformerInterface
      */
     protected $utilEncodingService;
 
-    /**
-     * @param \Spryker\Zed\StoreGui\Dependency\Service\StoreGuiToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(StoreGuiToUtilEncodingServiceInterface $utilEncodingService)
     {
         $this->utilEncodingService = $utilEncodingService;

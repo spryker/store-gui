@@ -106,11 +106,6 @@ class StoreRelationDropdownType extends AbstractType
         );
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $options = $this->getFactory()
@@ -120,19 +115,11 @@ class StoreRelationDropdownType extends AbstractType
         $resolver->setDefaults($options);
     }
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return static::BLOCK_PREFIX;
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormEvent $event
-     *
-     * @return void
-     */
     protected function setInitialData(FormEvent $event): void
     {
         if ($event->getData()) {

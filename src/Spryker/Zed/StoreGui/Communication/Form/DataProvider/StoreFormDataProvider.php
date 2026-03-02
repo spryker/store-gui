@@ -17,19 +17,11 @@ class StoreFormDataProvider
      */
     protected $storeFacade;
 
-    /**
-     * @param \Spryker\Zed\StoreGui\Dependency\Facade\StoreGuiToStoreFacadeInterface $storeFacade
-     */
     public function __construct(StoreGuiToStoreFacadeInterface $storeFacade)
     {
         $this->storeFacade = $storeFacade;
     }
 
-    /**
-     * @param int|null $idStore
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     public function getData(?int $idStore = null): StoreTransfer
     {
         $storeTransfer = new StoreTransfer();
@@ -41,9 +33,6 @@ class StoreFormDataProvider
         return $storeTransfer;
     }
 
-    /**
-     * @return array
-     */
     public function getOptions(): array
     {
         return [

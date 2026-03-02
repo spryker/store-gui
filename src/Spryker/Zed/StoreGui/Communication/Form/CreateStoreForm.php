@@ -48,33 +48,17 @@ class CreateStoreForm extends AbstractType
      */
     protected const REGEX_NAME_PATTERN = '/^(?!.*_{2})[A-Z][A-Z_]*[A-Z]$/';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return 'store';
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormBuilderInterface $builder
-     * @param array $options
-     *
-     * @return void
-     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $this->addNameField($builder)
             ->executeStoreFormExpanderPlugins($builder, $builder->getData());
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormView $view
-     * @param \Symfony\Component\Form\FormInterface $form
-     * @param array $options
-     *
-     * @return void
-     */
     public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         foreach ($this->getFactory()->getStoreFormViewExpanderPlugins() as $formViewExpanderPlugin) {

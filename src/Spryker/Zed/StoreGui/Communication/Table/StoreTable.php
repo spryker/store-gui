@@ -113,11 +113,6 @@ class StoreTable extends AbstractTable
         $this->storeFacade = $storeFacade;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $this->setHeader($config);
@@ -145,11 +140,6 @@ class StoreTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return void
-     */
     protected function setHeader(TableConfiguration $config): void
     {
         $config->setHeader([
@@ -158,11 +148,6 @@ class StoreTable extends AbstractTable
         ]);
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return void
-     */
     protected function setRawColumns(TableConfiguration $config): void
     {
         $config->setRawColumns([
@@ -170,11 +155,6 @@ class StoreTable extends AbstractTable
         ]);
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return array
-     */
     protected function prepareData(TableConfiguration $config): array
     {
         $queryResults = $this->runQuery($this->storeQuery, $config, true);
@@ -204,21 +184,11 @@ class StoreTable extends AbstractTable
         return $storeCollection;
     }
 
-    /**
-     * @param \Orm\Zed\Store\Persistence\SpyStore $storeEntity
-     *
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     protected function mapStoreEntityToTransfer(SpyStore $storeEntity): StoreTransfer
     {
         return (new StoreTransfer())->fromArray($storeEntity->toArray(), true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return array
-     */
     protected function generateItem(StoreTransfer $storeTransfer): array
     {
         return [
@@ -228,11 +198,6 @@ class StoreTable extends AbstractTable
         ];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return string
-     */
     protected function buildLinks(StoreTransfer $storeTransfer): string
     {
         $buttons = [];
@@ -245,11 +210,6 @@ class StoreTable extends AbstractTable
         return implode(' ', $buttons);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return string
-     */
     protected function createViewButton(StoreTransfer $storeTransfer): string
     {
         return $this->generateButton(
@@ -264,11 +224,6 @@ class StoreTable extends AbstractTable
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return string
-     */
     protected function createEditButton(StoreTransfer $storeTransfer): string
     {
         return $this->generateButton(
@@ -283,11 +238,6 @@ class StoreTable extends AbstractTable
         );
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return void
-     */
     protected function addActionsHeader(TableConfiguration $config): void
     {
         $config->setHeader($config->getHeader() + [static::COL_ACTIONS => static::VALUE_COL_ACTIONS]);

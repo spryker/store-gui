@@ -65,11 +65,6 @@ class StoreGuiDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const SERVICE_REQUEST_STACK = 'request_stack';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -87,11 +82,6 @@ class StoreGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStorePropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_STORE, $container->factory(function () {
@@ -101,11 +91,6 @@ class StoreGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFacade(Container $container): Container
     {
         $container->set(static::FACADE_STORE, function (Container $container) {
@@ -117,11 +102,6 @@ class StoreGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilEncodingService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_ENCODING, function (Container $container) {
@@ -133,11 +113,6 @@ class StoreGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFormExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_STORE_FORM_EXPANDER, function () {
@@ -147,11 +122,6 @@ class StoreGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFormViewExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_STORE_FORM_VIEW_EXPANDER, function () {
@@ -161,11 +131,6 @@ class StoreGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFormTabsExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_STORE_FORM_TABS_EXPANDER, function () {
@@ -175,11 +140,6 @@ class StoreGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreViewExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_STORE_VIEW_EXPANDER, function () {
@@ -189,11 +149,6 @@ class StoreGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreTableExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_STORE_TABLE_EXPANDER, function () {
@@ -243,11 +198,6 @@ class StoreGuiDependencyProvider extends AbstractBundleDependencyProvider
         return [];
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addRequestStack(Container $container): Container
     {
         $container->set(static::SERVICE_REQUEST_STACK, function (Container $container) {

@@ -18,17 +18,11 @@ class StoreRelationDropdownDataProvider
      */
     protected $storeFacade;
 
-    /**
-     * @param \Spryker\Zed\StoreGui\Dependency\Facade\StoreGuiToStoreFacadeInterface $storeFacade
-     */
     public function __construct(StoreGuiToStoreFacadeInterface $storeFacade)
     {
         $this->storeFacade = $storeFacade;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\StoreRelationTransfer
-     */
     public function getData(): StoreRelationTransfer
     {
         $allStoreIds = array_keys($this->getStoreNamesIndexedByIdStore());

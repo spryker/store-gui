@@ -32,9 +32,6 @@ use Symfony\Component\HttpFoundation\RequestStack;
  */
 class StoreGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\StoreGui\Communication\Table\StoreTable
-     */
     public function createStoreTable(): StoreTable
     {
         return new StoreTable(
@@ -44,9 +41,6 @@ class StoreGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\StoreGui\Communication\Form\DataProvider\StoreRelationDropdownDataProvider
-     */
     public function createStoreRelationDropdownDataProvider(): StoreRelationDropdownDataProvider
     {
         return new StoreRelationDropdownDataProvider($this->getStoreFacade());
@@ -60,33 +54,21 @@ class StoreGuiCommunicationFactory extends AbstractCommunicationFactory
         return new IdStoresDataTransformer($this->getUtilEncodingService());
     }
 
-    /**
-     * @return \Orm\Zed\Store\Persistence\SpyStoreQuery
-     */
     public function getStorePropelQuery(): SpyStoreQuery
     {
         return $this->getProvidedDependency(StoreGuiDependencyProvider::PROPEL_QUERY_STORE);
     }
 
-    /**
-     * @return \Spryker\Zed\StoreGui\Dependency\Service\StoreGuiToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): StoreGuiToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(StoreGuiDependencyProvider::SERVICE_UTIL_ENCODING);
     }
 
-    /**
-     * @return \Spryker\Zed\StoreGui\Communication\Form\DataProvider\StoreFormDataProvider
-     */
     public function createStoreFormDataProvider(): StoreFormDataProvider
     {
         return new StoreFormDataProvider($this->getStoreFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\StoreGui\Communication\Tabs\StoreFormTabs
-     */
     public function createStoreFormTabs(): StoreFormTabs
     {
         return new StoreFormTabs(
@@ -94,31 +76,16 @@ class StoreGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer|null $data
-     * @param array $options
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function getCreateStoreForm(?StoreTransfer $data = null, array $options = []): FormInterface
     {
         return $this->getFormFactory()->create(CreateStoreForm::class, $data, $options);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StoreTransfer|null $data
-     * @param array $options
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function getUpdateStoreForm(?StoreTransfer $data = null, array $options = []): FormInterface
     {
         return $this->getFormFactory()->create(UpdateStoreForm::class, $data, $options);
     }
 
-    /**
-     * @return \Spryker\Zed\StoreGui\Dependency\Facade\StoreGuiToStoreFacadeInterface
-     */
     public function getStoreFacade(): StoreGuiToStoreFacadeInterface
     {
         return $this->getProvidedDependency(StoreGuiDependencyProvider::FACADE_STORE);
@@ -164,25 +131,16 @@ class StoreGuiCommunicationFactory extends AbstractCommunicationFactory
         return $this->getProvidedDependency(StoreGuiDependencyProvider::PLUGINS_STORE_VIEW_EXPANDER);
     }
 
-    /**
-     * @return \Spryker\Zed\StoreGui\Communication\Expander\StoreListDataExpanderInterface
-     */
     public function createStoreListDataExpander(): StoreListDataExpanderInterface
     {
         return new StoreListDataExpander($this->getStoreFacade(), $this->getRequest());
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\Request|null
-     */
     public function getRequest(): ?Request
     {
         return $this->getRequestStack()->getCurrentRequest();
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RequestStack
-     */
     public function getRequestStack(): RequestStack
     {
         return $this->getProvidedDependency(StoreGuiDependencyProvider::SERVICE_REQUEST_STACK);

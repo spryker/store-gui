@@ -12,17 +12,11 @@ use Symfony\Component\HttpFoundation\Request;
 
 class StoreTableMock extends StoreTable
 {
-    /**
-     * @return \Symfony\Component\HttpFoundation\Request
-     */
     protected function getRequest(): Request
     {
         return new Request();
     }
 
-    /**
-     * @return array
-     */
     public function fetchData(): array
     {
         return $this->init()->prepareData($this->config);

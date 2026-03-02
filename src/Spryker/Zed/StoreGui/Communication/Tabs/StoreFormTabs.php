@@ -46,11 +46,6 @@ class StoreFormTabs extends AbstractTabs
         $this->storeFormTabExpanderPlugins = $storeFormTabExpanderPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\TabsViewTransfer $tabsViewTransfer
-     *
-     * @return \Generated\Shared\Transfer\TabsViewTransfer
-     */
     protected function build(TabsViewTransfer $tabsViewTransfer): TabsViewTransfer
     {
         $this->addGeneralTab($tabsViewTransfer)
@@ -76,11 +71,6 @@ class StoreFormTabs extends AbstractTabs
         return $this;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\TabsViewTransfer $tabsViewTransfer
-     *
-     * @return \Generated\Shared\Transfer\TabsViewTransfer
-     */
     protected function executeStoreFormTabExpanderPlugins(TabsViewTransfer $tabsViewTransfer): TabsViewTransfer
     {
         foreach ($this->storeFormTabExpanderPlugins as $storeFormTabExpanderPlugin) {
