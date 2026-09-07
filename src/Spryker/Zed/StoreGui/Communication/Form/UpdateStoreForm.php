@@ -33,10 +33,7 @@ class UpdateStoreForm extends CreateStoreForm
     {
         $builder->add(static::FIELD_NAME, TextType::class, [
             'label' => static::LABEL_NAME,
-            'constraints' => $this->getNameFieldConstraints(),
-            'attr' => [
-                'disabled' => true,
-            ],
+            'disabled' => true,
         ]);
 
         return $this;
@@ -52,13 +49,5 @@ class UpdateStoreForm extends CreateStoreForm
         $builder->add(static::FIELD_ID_STORE, HiddenType::class);
 
         return $this;
-    }
-
-    /**
-     * @return array<\Symfony\Component\Validator\Constraint>
-     */
-    protected function getNameFieldConstraints(): array
-    {
-        return [];
     }
 }
