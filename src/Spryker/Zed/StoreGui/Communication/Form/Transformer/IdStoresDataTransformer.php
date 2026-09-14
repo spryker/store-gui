@@ -30,7 +30,7 @@ class IdStoresDataTransformer implements DataTransformerInterface
      *
      * @return mixed|string|null
      */
-    public function transform($value)
+    public function transform($value): mixed
     {
         return $this->utilEncodingService->encodeJson($value);
     }
@@ -40,7 +40,7 @@ class IdStoresDataTransformer implements DataTransformerInterface
      *
      * @return array<mixed>|null
      */
-    public function reverseTransform($value)
+    public function reverseTransform($value): mixed
     {
         /** @phpstan-var array<mixed>|null */
         return $this->utilEncodingService->decodeJson($value, true);
