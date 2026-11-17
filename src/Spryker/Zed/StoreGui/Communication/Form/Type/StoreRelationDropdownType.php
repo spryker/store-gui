@@ -185,7 +185,7 @@ class StoreRelationDropdownType extends AbstractType
                 ],
                 'choice_attr' => function ($idStore) use ($options) {
                     return [
-                        'disabled' => $this->getIsStoreDisabled($idStore, $options),
+                        'disabled' => $this->isStoreDisabled($idStore, $options),
                     ];
                 },
             ],
@@ -231,7 +231,7 @@ class StoreRelationDropdownType extends AbstractType
      *
      * @return bool
      */
-    protected function getIsStoreDisabled(string $idStore, array $options): bool
+    protected function isStoreDisabled(string $idStore, array $options): bool
     {
         $inactiveChoices = $options[static::OPTION_INACTIVE_CHOICES];
 
